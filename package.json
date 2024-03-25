@@ -1,0 +1,23 @@
+{
+  "name": "@matrix-org/spec",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/t3chguy/matrix-spec-npm"
+  },
+  "version": "1.10.1",
+  "description": "Data & type definitions for the Matrix Spec",
+  "author": "matrix.org",
+  "license": "Apache-2.0",
+  "files": [
+    "sas-emoji.json",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "prepare": "yarn run prepare:emoji && yarn run prepare:types",
+    "prepare:emoji": "cp ./matrix-spec/data-definitions/sas-emoji.json .",
+    "prepare:types": "./openapi.sh"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^6.7.5"
+  }
+}
